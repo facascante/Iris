@@ -193,15 +193,13 @@ iris.route.post("/entity/create/:type", function (req, res) {
 
     if (fail.code) {
 
-      res.status(fail.code).json();
+      res.status(fail.code).json(fail);
 
     } else {
 
-      res.status(400).json();
+      res.status(400).json(fail);
 
     }
-
-    res.json(JSON.stringify(fail));
 
   });
 
